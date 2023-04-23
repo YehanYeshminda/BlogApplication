@@ -44,10 +44,11 @@
       </div>
     </div>
 
+    <div class="me-3 header-navbar" *ngIf="!(currentUser$ | async)">Dont have one? <a routerLink="/register"> Register</a></div>
+
     <form
       *ngIf="!(currentUser$ | async)"
       class="d-flex"
-      #loginForm="ngForm"
       (ngSubmit)="login()"
       autocomplete="off"
     >

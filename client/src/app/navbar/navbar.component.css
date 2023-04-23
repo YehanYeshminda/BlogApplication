@@ -8,3 +8,16 @@ img {
   border: 2px solid white;
   display: inline;
 }
+
+.header-navbar {
+  color: white;
+}
+
+.header-navbar a {
+  color: white;
+  font-weight: bold;
+}
+
+.header-navbar a:hover {
+  color: black;
+}

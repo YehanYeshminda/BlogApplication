@@ -28,6 +28,17 @@ export class AccountService {
   }
 
   register(model: any) {
+    return this.http.post<User>(this.baseUrl + 'account/register', model).pipe(
+      map((user) => {
+        this.setCurrentUser(user);
+        return user;
+      })
+    )
+  }
+
+  logout() {
+    localStorage.removeItem('user');
+    this.currentUserSource.next(null);
   }
 
   setCurrentUser(user: User) {
